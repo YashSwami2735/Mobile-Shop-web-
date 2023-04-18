@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobile Shop</title>
+	<script>
+		function validateForm() {
+			var name = document.forms["orderForm"]["name"].value;
+			var email = document.forms["orderForm"]["email"].value;
+			var phone = document.forms["orderForm"]["phone"].value;
+			var model = document.forms["orderForm"]["model"].value;
+			if (name == "") {
+				alert("Name must be filled out");
+				return false;
+			}
+			if (email == "") {
+				alert("Email must be filled out");
+				return false;
+			}
+			if (phone == "") {
+				alert("Phone number must be filled out");
+				return false;
+			}
+			if (model == "") {
+				alert("Mobile model must be selected");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Welcome to Mobile Shop</h1>
+		<nav>
+			<ul>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#products">Products</a></li>
+				<li><a href="#contact">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="about">
+			<h2>About Us</h2>
+			<p>Insert information about your mobile shop here.</p>
+		</section>
+		<section id="products">
+			<h2>Products</h2>
+			<ul>
+				<li>Mobile Model 1</li>
+				<li>Mobile Model 2</li>
+				<li>Mobile Model 3</li>
+			</ul>
+			<form name="orderForm" onsubmit="return validateForm()">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required><br><br>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required><br><br>
+				<label for="phone">Phone:</label>
+				<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
+				<label for="model">Select a mobile model:</label>
+				<select id="model" name="model" required>
+					<option value=""></option>
+					<option value="Mobile Model 1">Mobile Model 1</option>
+					<option value="Mobile Model 2">Mobile Model 2</option>
+					<option value="Mobile Model 3">Mobile Model 3</option>
+				</select><br><br>
+				<input type="submit" value="Submit">
+			</form>
+		</section>
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<p>Insert contact information for your mobile shop here.</p>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Mobile Shop. All rights reserved.</p>
+	</footer>
+</body>
+</html>
